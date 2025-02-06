@@ -6,6 +6,10 @@
     --cor-terciaria: #22d4fd;
     --cor-hoover: #272727;
 
+   
+
+
+
     --fonte-primaria: 'krona one' , sans-serif;
     --fonte-secundaria: 'montserrat', sans-serif;
 }
@@ -16,9 +20,41 @@
 
 
 body {
-    box-sizing: border-box;
     background-color: var(--cor-primaria);
     color: var(--cor-secundaria);
+    position: relative;
+    z-index: 1;
+}
+
+body.dark-mode{
+    --cor-primaria: #black;
+    --cor-secundaria: #black;
+    --cor--hoover: #22d4fd;
+}
+
+.toggle-mode {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-primaria);
+    border: 1px solid var(--cor-hoover);
+    width: 10%;
+    font-weight: 800;
+    padding: 10px 20px;
+    font-size: 1.1rem;
+    border-radius: 20px;
+    text-decoration: none;
+    font-family: var(--fonte-secundaria);
+    cursor: pointer;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+.toggle-mode:hover {
+    background-color: var(--cor-hoover);
+    color: var(--cor-secundaria);
+}
+
+.toggle-mode:active {
+    background-color: var(--cor-terciaria);
+    color: var(--cor-primaria);
 }
 
 .cabecalho{
@@ -52,7 +88,6 @@ body {
     transform: scaleX(1.1);
 }
 
-
 .apresentacao {
     padding: 5% 15%;
     display: flex;
@@ -62,13 +97,13 @@ body {
     
 }
 
-
 .apresentacao__conteudo {
 width: 50%;
 display: flex;
 flex-direction: column;
 gap: 10px;
 }
+
 .apresentacao__conteudo__titulo {
     font-size: 2.25rem;
     font-family: var(--fonte-primaria);
@@ -78,11 +113,11 @@ gap: 10px;
     color: var(--cor-terciaria);
 }
 
-
 .apresentacao__conteudo__texto {
     font-size: 1.5rem;
     font-family: var(--fonte-secundaria);
 }
+
 .apresentacao__links {
      display: flex;
      gap: 32px;
@@ -90,27 +125,31 @@ gap: 10px;
      align-items: center;
      justify-content: space-between;
 }
+
 .apresentacao__links__subtitulo {
     font-size: 1.5rem;
     font-weight: 400px;
     font-family: var(--fonte-primaria);
 
 }
+
 .apresentacao__links__nav {
     display: flex;
     justify-content: center;
     gap: 16px;
-     border: 1px solid var(--cor-terciaria);
-      width: 50%;
-     font-weight: 700;
+     border: 4px solid var(--cor-terciaria);
+      width: 70%;
+     font-weight: 800;
      padding: 21.5px 0;
      text-align: center;
+     align-items: center;
     font-size: 1.5rem;
     color: var(--cor-secundaria);
-    border-radius: 10px;
+    border-radius: 15px;
     text-decoration: none;
     font-family: var(--fonte-secundaria);
 }
+
 .apresentacao__links__nav:hover {
     background-color: var(--cor-hoover);
     color: var(--cor-terciaria);
@@ -133,6 +172,7 @@ gap: 10px;
   font-size: 1.5rem;
   font-weight: 400;  
 }
+
 .rodape__link {
     text-decoration: none;
     color: var(--cor-primaria);
@@ -161,3 +201,68 @@ gap: 10px;
         width: auto;
         }
     }
+
+    .switch {
+        position: relative;
+        display: inline-block;
+        width: 60px;
+        height: 34px;
+    }
+    
+    .switch input {
+        opacity: 0;
+        width: 0;
+        height: 0;
+    }
+    .switch-label {
+        position: absolute;
+        top: 50%;
+        left: 70px;
+        transform: translateY(-50%);
+        font-family: var(--fonte-secundaria);
+        font-size: 1.1rem;
+        color: var(--cor-secundaria);
+    }
+
+    .slider {
+        position: absolute;
+        cursor: pointer;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-color: var(--cor-secundaria);
+        transition: .4s;
+        border-radius: 34px;
+    }
+    
+.slider:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: var(--cor-primaria);
+    transition: .4s;
+    border-radius: 50%;
+}
+
+
+input:checked + .slider {
+    background-color: var(--cor-hoover);
+}
+
+input:checked + .slider:before {
+    transform: translateX(26px);
+}
+
+.switch-label {
+    position: absolute;
+    top: 50%;
+    left: 70px;
+    transform: translateY(-50%);
+    font-family: var(--fonte-secundaria);
+    font-size: 1.1rem;
+    color: var(--cor-secundaria);
+}

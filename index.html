@@ -4,42 +4,57 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>portifolio</title>
-    <link rel="stylesheet" href="./styles/style.css"
+    <title>Portfólio</title>
+    <link rel="stylesheet" href="./styles/style.css">
 </head>
 <body>
     <header class="cabecalho">
-<nav class="cabecalho__menu">
-    <a class="cabecalho__menu__link" href="index.html">Home</a>
-    <a class="cabecalho__menu__link" href="about.html">Sobre Mim</a>
-</nav>
+        <nav class="cabecalho__menu">
+            <a class="cabecalho__menu__link" href="index.html">Home</a>
+            <a class="cabecalho__menu__link" href="about.html">Sobre Mim</a>
+        </nav>
     </header>
- <main class="apresentacao">
-            <section class="apresentacao__conteudo">
-            <h1 class="apresentacao__conteudo__titulo">Eleve seu negócio digital a outro nível <strong class="destaqueTitulo">
-            com um Front-end de qualidade!</strong></h1>
-            <p class="apresentacao__conteudo__texto">Olá! Sou Gabriel Henrique, estudante e  desenvolvedor em formação, Ajudo pequenos negócios a colocarem em prática boas ideias. Vamos conversar?</p> 
+    <main class="apresentacao">
+        <section class="apresentacao__conteudo">
+            <h1 class="apresentacao__conteudo__titulo">
+                Eleve seu negócio digital a outro nível 
+                <strong class="destaqueTitulo">com um Front-end de qualidade!</strong>
+            </h1>
+            <p class="apresentacao__conteudo__texto">
+                Olá! Sou Gabriel Henrique, estudante e desenvolvedor em formação, Ajudo pequenos negócios a colocarem em prática boas ideias. Vamos conversar?
+            </p>
             <div class="apresentacao__links">
                 <h2 class="apresentacao__links__subtitulo">Acesse minhas redes</h2>
-
-            <a class="apresentacao__links__nav" href="https://github.com/gabrielCsharp">
-                <img src="assets/github.png" alt="">github</a>
-
+                <a class="apresentacao__links__nav" href="https://github.com/gabrielCsharp">
+                    <img src="assets/github.png" alt="GitHub">GitHub
+                </a>
                 <a class="apresentacao__links__nav" href="https://www.linkedin.com/in/gabhenrique-dev/">
-                    <img src="assets/linkedin.png" alt="">Linkedin</a>
-
-                    <a class="apresentacao__links__nav" href="https://www.instagram.com/__.bielll/">
-                        <img src="assets/instagram.png" alt="">instagram</a>
-
-
+                    <img src="assets/linkedin.png" alt="LinkedIn">LinkedIn
+                </a>
+                <a class="apresentacao__links__nav" href="https://www.instagram.com/__.bielll/">
+                    <img src="assets/instagram.png" alt="Instagram">Instagram
+                </a>
             </div>
-    </section>
-   <img class="apresentacao__imagem" src="assets/bdvv2.gif" alt="eu">
- </main>
+        </section>
+        <img class="apresentacao__imagem" src="assets/bdvv2.gif" alt="eu">
+    </main>
     <footer class="rodape">
         <p>
             Desenvolvido por <a class="rodape__link" href="https://github.com/gabrielCsharp">©BielDev.</a>
         </p>
     </footer>
+    <div class="switch">
+        <input type="checkbox" id="toggle-mode" class="toggle-mode">
+        <label for="toggle-mode" class="slider"></label>
+        <span class="switch-label">Modo Noturno</span>
+    </div>
+    <script>
+        const toggleButton = document.getElementById('toggle-mode');
+        toggleButton.addEventListener('change', () => {
+            document.body.classList.toggle('dark-mode');
+            const label = document.querySelector('.switch-label');
+            label.textContent = document.body.classList.contains('dark-mode') ? 'Modo Claro' : 'Modo Noturno';
+        });
+    </script>
 </body>
 </html>
