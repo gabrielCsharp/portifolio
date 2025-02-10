@@ -42,7 +42,7 @@ Inicie o servidor de desenvolvimento:
 
 npm run dev
 
-Acesse no navegador: http://localhost:3000
+Acesse no navegador: https://portifolio-roan-gamma.vercel.app/
 
 📬 Contato
 
