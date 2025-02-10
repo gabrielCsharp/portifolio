@@ -18,7 +18,7 @@ Design responsivo e moderno
 
 🛠 Tecnologias Utilizadas
 
-Frontend: React.js, Next.js
+Frontend: HTML / CSS
 
 Estilização: Tailwind CSS
 
